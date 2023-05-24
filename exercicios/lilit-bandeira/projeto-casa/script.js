@@ -52,6 +52,6 @@ O exercício consiste em usar JavaScript para popular os campos corretamente com
 Importante:
 
 1. Crie seu próprio layout usando HTML e CSS nos arquivos já criados nesta pasta;
-2. Repare que este Json é uma matriz, logo é possível usar métodos de array para acessar seu conteúdo;
+2. Repare que este Json é uma array, logo é possível usar métodos de array para acessar seu conteúdo;
 3. Entregue este exercício da maneira que conseguir, use o exemplo da sala para guiar nesta construção;
 */
