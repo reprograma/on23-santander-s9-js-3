@@ -59,50 +59,21 @@ const json = [
  const container = document.getElementById('demo');
  console.log(container);
 
- function carregarPagina(series){
-    series.map((serie) => {
-        const card = document.createElement("section")
-        card.classList.add('cards')
-        container.appendChild(card)
-
-        const cover = document.createElement("img")
-        cover.classList.add("covers")
-        cover.setAttribute('src', serie.imagem )
-        card.appendChild(cover)
-
-        const title = document.createElement("h2")
-        title.classList.add("title")
-        title.innerText = serie.titulo
-        card.appendChild(title)
-
-        const year = document.createElement("p")
-        year.classList.add("contents")
-        year.innerHTML = `Ano: <span class="dynamic-text"> ${serie.ano}</span>`
-        card.appendChild(year)
-
-        const director = document.createElement("p")
-        director.classList.add('contents')
-        director.innerHTML = `Direção: <span class="dynamic-text"> ${serie.diretor}</span>`
-        card.appendChild(director)
-
-        const genders = document.createElement("p")
-        genders.classList.add('contents')
-        genders.innerHTML = `Generos: <span class="dynamic-text"> ${serie.generos.join (' - ')} </span>`
-        card.appendChild(genders)
-
-        const cast = document.createElement("p")
-        cast.classList.add('contents')
-        cast.innerHTML = `Elenco: <span class="dynamic-text"> ${serie.elenco.join (' - ')} </span>`
-        card.appendChild(cast)
-
-        const instagram = document.createElement("a")
-        instagram.setAttribute('href', serie.instagram)
-        instagram.setAttribute('target', '_blank')
-        instagram.innerHTML = `<i class="fab fa-instagram"></i>`
-        card.appendChild(instagram)
-
-    })
- }
+function carregarPagina(series){
+  series.forEach((serie) => {
+    container.innerHTML += `
+    <section class="cards">
+      <img class="covers" src=${serie.imagem}>
+      <h2 class="title"> ${serie.titulo} </h2>
+      <p class="contents">Ano: <span class="dynamic-text"> ${serie.ano} </span></p>
+      <p class="contents"> Diretor: <span class="dynamic-text"> ${serie.diretor} </span> </p>
+      <p class="contents"> Gêneros: <span class="dynamic-text"> ${serie.generos} </span></p>
+      <p class="contents"> Elenco: <span class="dynamic-text"> ${serie.elenco} </span></p>
+      <a href= ${serie.instagram} target="_blank"><i class="fab fa-instagram"></i></a>
+    </section>
+    `
+  });
+}
 
  carregarPagina(json);
   

@@ -10,7 +10,16 @@
   
   body {
     width: 100%;
-    background-color: #8854d0; /* https://flatuicolors.com/palette/de */
+    background-color: #2d3436; /* https://flatuicolors.com/palette/de */
+  }
+
+  h1{
+    display: flex;
+    justify-content: center;
+    font-size: 8rem;
+    font-weight: bold;
+    color: grey;
+    margin-top: 7rem;
   }
   
   #demo {
@@ -24,7 +33,9 @@
     background-color: #f1f1f140;
     backdrop-filter: blur(10px);
     width: 15vw;
+    min-width: 10vh;
     min-height: 60vh;
+    height: 80vh;
     padding: 3rem;
     display: flex;
     flex-direction: column;
@@ -48,7 +59,7 @@
   }
   
   .contents {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     color: plum;
     font-weight: 600;
     align-self: flex-start;
@@ -69,5 +80,64 @@
     filter: drop-shadow(1px 1px 1px #57657490);
     color: plum;
     outline: none;
+  }
+
+  @media(max-width: 1150px){
+    #demo{
+      height: fit-content
+    }
+
+    .cards{
+      height: fit-content;
+    }
+  }
+
+  @media (max-width: 920px){
+    .covers{
+      height: 17vh;
+    }
+  }
+
+  @media (max-width:840px){
+    .title{
+      font-size: 2rem;
+    }
+    .dynamic-text {
+      font-size: 1rem;
+  }
+}
+
+  @media (max-width:810px){
+    #demo{
+      display: flex;
+      flex-direction: column;
+      height: auto;
+    }
+
+    .cards{
+      width: 50vh;
+      margin-bottom: 2rem;
+    }
+
+    .covers{
+      height: 20vh;
+    }
+
+    .title{
+      font-size: 2.5rem;
+    }
+
+    .dynamic-text{
+      font-size: 1.5rem;
+    }
+  }
+
+  @media(max-width: 320px){
+    h1{
+      font-size: 6rem;
+    }
+    .cards{
+      width: 25rem;
+    }
   }
   
