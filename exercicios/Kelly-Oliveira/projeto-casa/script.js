@@ -55,3 +55,60 @@ Importante:
 2. Repare que este Json é uma matriz, logo é possível usar métodos de array para acessar seu conteúdo;
 3. Entregue este exercício da maneira que conseguir, use o exemplo da sala para guiar nesta construção;
 */
+const container = document.getElementById("demo")
+
+function preencherPagina(series){
+  series.forEach((serie) => {
+    container.innerHTML += `
+    <section class="cards">
+    <img class="covers" src=${serie.imagem}>
+    <h2 class="titles">${serie.titulo}</h2>
+    <p class="contents">Ano: <span class="dynamic-text">${serie.ano}</span></p>
+    <p class="contents">Direção: <span class="dynamic-text">${serie.diretor}</span></p>
+    <p class="contents">Gêneros: <span class="dynamic-text">${serie.generos.join(' - ')}</span></p>
+    <p class="contents">Elenco: <span class="dynamic-text">${serie.elenco.join(' - ')}</span></p>
+    <a href=${serie.instagram} target=_blank><i class="fab fa-instagram"></i></a>
+    <\section>`
+
+    }
+    
+  );
+}
+/*function preencherPagina(series){
+  series.map((serie) => {
+    const card = document.createElement("section")
+    card.classList.add("cards")
+    container.appendChild(card)
+
+    const cover = document.createElement("img")
+    cover.classList.add("covers")
+    cover.setAttribute('src', serie.imagem)
+    card.appendChild(cover)
+
+    const title = document.createElement("h2")
+    title.classList.add("titles")
+    title.innerText = serie.titulo
+    card.appendChild(title)
+
+    const year = document.createElement("p")
+    year.classList.add("contents")
+    year.innerText = 'Ano: <span class="dynamic-text">' + serie.ano + '</span>'
+    card.appendChild(year)
+
+    const director = document.createElement("p")
+    director.classList.add("contents")
+    director.innerText = `Direção: <span class="dynamic-text">${serie.diretor}</span>`
+    card.appendChild(director)
+
+
+    const instagram = document.createElement("a")
+    instagram.setAttribute('href', serie.instagram)
+    instagram.setAttribute('target', '_blank')
+    instagram.innerHTML = '<i class="fab fa-instagram"></i>'
+    card.appendChild(cover)
+
+  })
+}*/
+
+preencherPagina(json)
+
