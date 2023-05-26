@@ -24,3 +24,4 @@ function setData(singer) {
 }
 
 setData(objetoJson)
+
