@@ -55,3 +55,23 @@ Importante:
 2. Repare que este Json é uma matriz, logo é possível usar métodos de array para acessar seu conteúdo;
 3. Entregue este exercício da maneira que conseguir, use o exemplo da sala para guiar nesta construção;
 */
+
+const container = document.getElementById('demo')
+
+function preencherPagina(series) {
+  series.forEach((serie) => {
+    container.innerHTML += `
+     <section class="cards">
+      <img class="covers" src=${serie.imagem}>
+      <h2 class="titles">${serie.titulo}</h2>
+      <p class="contents">Ano: <span class="dynamic-text">${serie.ano}</span></p>
+      <p class="contents">Direção: <span class="dynamic-text">${serie.diretor}</span></p>
+      <p class="contents">Gêneros: <span class="dynamic-text">${serie.generos.join(' - ')}</span></p>
+      <p class="contents">Elenco: <span class="dynamic-text">${serie.elenco.join(' - ')}</span></p>
+      <a href=${serie.instagram} target=_blank><i class="fab fa-instagram"></i></a>
+     </section>
+    `
+  })
+}
+
+preencherPagina(json)
